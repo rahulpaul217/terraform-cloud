@@ -7,6 +7,9 @@ resource "azurerm_linux_virtual_machine" "linuxvm" {
   admin_username      = "adminuser"
   network_interface_ids = [
   azurerm_network_interface.nic.id]
+  tags = {
+    env = "lab"
+  }
 
   admin_ssh_key {
     username   = "adminuser"
